@@ -1,0 +1,20 @@
+.pageHome {
+  width: 100vw;
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.cardAsistant__image {
+  width: 300px;
+}
+.cardAsistant__name {
+  margin: 1em 0;
+  text-align: center;
+  font-family: "Barlow", sans-serif;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+}
