@@ -1,5 +1,4 @@
 .pageHome__card {
-  text-decoration: none;
   border-radius: 1em;
   box-shadow: 5px 5px 16px #131313, -5px -5px 16px #393939;
   padding: 2em 0;
@@ -17,6 +16,7 @@
 }
 
 .card__description {
+  text-align: center;
   font-family: "Barlow", sans-serif;
   color: #faf3b0;
 }

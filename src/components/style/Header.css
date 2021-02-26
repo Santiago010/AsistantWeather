@@ -1,0 +1,37 @@
+.header {
+  padding: 1em 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 0.8em;
+  align-items: center;
+  box-shadow: 5px 5px 10px #1e1e1e, -5px -5px 10px #2e2e2e;
+}
+
+.fa-chevron-left {
+  color: #fff;
+  font-size: 2.5em;
+  text-shadow: 1px 2px 5px #fff;
+}
+
+.header__targetAsistant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header__targetAsistant--image {
+  border: 1px dashed #fff;
+  border-radius: 50%;
+  object-fit: cover;
+  width: 50px;
+}
+
+.header__targetAsistant--name {
+  margin: 0.5em 0;
+  font-family: "Barlow", sans-serif;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.3em;
+  letter-spacing: 1px;
+}

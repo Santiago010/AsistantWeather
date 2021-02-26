@@ -1,7 +1,5 @@
 import React from "react";
-import CardChat from "./CardChat";
 import "./style/Chat.css";
-import "./style/CardChat.css";
 
 class Chat extends React.Component {
   render() {
@@ -19,4 +17,5 @@ class Chat extends React.Component {
     );
   }
 }
+
 export default Chat;

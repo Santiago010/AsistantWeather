@@ -1,15 +1,19 @@
-import { Component, Fragment } from "react";
+import { Component } from "react";
 import { Link } from "react-router-dom";
-import "./style/Today.css";
+import "./style/StylePages.css";
 import Chat from "../components/Chat";
 import ImageAsistant from "../docs/ImageAsistant.svg";
 import ImageUser from "../docs/ImageUser.svg";
 import ImageWeather from "../docs/ImageWeather.svg";
+import Header from "../components/Header";
+import Form from "../components/Form";
+import { key } from "../docs/ApiKey";
 
 class Today extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      valueInput: "",
       message: [
         {
           image: ImageAsistant,
@@ -23,6 +27,10 @@ class Today extends Component {
     this.indicatorInfo = true;
     this.data = null;
   }
+
+  handleChange = (e) => {
+    this.setState({ valueInput: e.target.value });
+  };
 
   renderInfo = (options) => {
     const optionFull = options.toLowerCase();
@@ -67,11 +75,12 @@ class Today extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     this.instantsFormData = new FormData(e.target);
+    console.log(this.instantsFormData.get("data"));
 
     this.setState({
       message: [].concat(this.state.message, {
         image: "",
-        paragraph: this.instantsFormData.get("data"),
+        paragraph: `Ciudad ingresada: ${this.instantsFormData.get("data")}`,
       }),
     });
 
@@ -101,10 +110,10 @@ class Today extends Component {
     }
   };
 
-  getData = async (country) => {
+  getData = (country) => {
     return new Promise((resolve, reject) => {
       fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=3d060094da375105a7dd696078c59e0c&lang=es`
+        `https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${key}&lang=es`
       )
         .then((res) => res.json())
         .then((data) => resolve(data))
@@ -121,7 +130,6 @@ class Today extends Component {
         }),
       });
     }, 1500);
-    console.log(this.state.message);
   }
 
   componentWillUnmount() {
@@ -130,33 +138,14 @@ class Today extends Component {
 
   render() {
     return (
-      <div className="today">
-        <div className="header">
-          <Link to="/" className="header__arrowBefore">
-            <i className="fas fa-chevron-left"></i>
-          </Link>
-          <div className="header__targetAsistant">
-            <img
-              src={ImageUser}
-              alt="Image User"
-              className="header__targetAsistant--image"
-            />
-            <span className="header__targetAsistant--name">Name Asistant</span>
-          </div>
-        </div>
+      <div className="container--principal">
+        <Header ImageUser={ImageUser} nameAsistant={"Lucia"} />
         <Chat messages={this.state.message} />
-        <Fragment>
-          <form className="form" onSubmit={(e) => this.handleSubmit(e)}>
-            <input
-              className="form__inputText"
-              type="text"
-              name="data"
-              placeholder="Datos"
-              required
-            />
-            <input className="form__inputSubmit" type="submit" value=">" />
-          </form>
-        </Fragment>
+        <Form
+          onSubmit={(e) => this.handleSubmit(e)}
+          valueInput={this.state.valueInput}
+          handleChange={this.handleChange}
+        />
       </div>
     );
   }
