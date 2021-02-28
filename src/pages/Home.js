@@ -22,7 +22,7 @@ class Home extends Component {
             <Card
               title={"Lucia Da Clima Actual"}
               description={
-                "Preguntale a Lucia cual es el clima actual de tu ciudad"
+                "Pregúntale a Lucia cuál es el clima actual de tu ciudad"
               }
             />
           </Link>
@@ -30,7 +30,7 @@ class Home extends Component {
             <Card
               title={"Harry Da el pronostico del clima"}
               description={
-                "Preguntale a Harry el pronostico del clima de tu ciudad de los proximos 5 dias"
+                "Pregúntale a Harry el pronóstico del clima de tu ciudad de los proximos 5 dias"
               }
             />
           </Link>

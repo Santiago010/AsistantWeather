@@ -14,10 +14,7 @@ class Chat2 extends React.Component {
                 {message.data.list.map((data, index2) => {
                   return (
                     <li key={index2}>
-                      <p>
-                        <span className="type--info">Intervalo numero: </span>
-                        {index2 + 1}
-                      </p>
+
                       <p>
                         <span className="type--info underline">
                           Fecha Y Hora:{" "}

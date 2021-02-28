@@ -1,0 +1,31 @@
+.modal {
+  background-color: #ffffff;
+  padding: 1em;
+  position: fixed;
+  top: 15%;
+  left: 0;
+  box-shadow: 0px 0px 30px 50px rgba(0, 0, 0, 0.7);
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  text-align: center;
+  font-family: "Barlow", sans-serif;
+}
+
+.containerImage__img {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 50px;
+}
+
+.modal__btn {
+  font-size: 1.3em;
+  border: none;
+  outline: none;
+  font-weight: 900;
+  background-color: #b375c0;
+  border-radius: 0.2em;
+  margin-top: 0.5em;
+}

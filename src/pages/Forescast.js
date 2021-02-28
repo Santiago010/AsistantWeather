@@ -35,7 +35,7 @@ class Forescast5Days extends React.Component {
         message: [].concat(this.state.message, {
           image: ImageWeather,
           paragraph:
-            "Si deseas mi ayuda debes ingresar dos datos, separados por comas, en el campo que se encuentra abajo: 1) Ciudad, 2) Intervalo de tiempo.Para obtener la informacion del pronostico del clima de un dia, se debe tener en cuenta que debes ingresar el numero 7, ya que un dia consta de 7 intervalos de clima, teniendo esto en cuenta debes multiplicar 7 por la cantidad de dias a los que quieres obtener informacion del pronostico del clima.",
+            "Si deseas mi ayuda debes ingresar dos datos separados por comas, en el campo que se encuentra abajo: 1) Ciudad, 2) la cantidad de días a los cuales quieres ver el pronóstico.",
           data: {
             list: [],
           },
@@ -57,14 +57,14 @@ class Forescast5Days extends React.Component {
     this.setState({
       message: [].concat(this.state.message, {
         image: "",
-        paragraph: `Ciudad ingresada: ${dataUser[0]}, Intervalo ingresado: ${dataUser[1]}`,
+        paragraph: `Ciudad ingresada: ${dataUser[0]}, Cantidad de dias ingresados ${dataUser[1]}`,
         data: {
           list: [],
         },
       }),
     });
 
-    this.data = await this.getData(dataUser[0], dataUser[1]);
+    this.data = await this.getData(dataUser[0], dataUser[1] * 7);
     if (this.data.cod === "404") {
       console.log("Ciudad no encontrada");
       this.setState({
