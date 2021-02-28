@@ -18,4 +18,4 @@ Este proyecto está hecho en React, se está haciendo uso de React Router para m
 
 # Este proyecto se le va hacer deploy en el servicio de heroku
 
-https://weatherassistants.herokuapp.com/
+https://weatherassistans.herokuapp.com/
