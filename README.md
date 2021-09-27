@@ -16,6 +16,6 @@ Este proyecto está hecho en React, se está haciendo uso de React Router para m
 
 ### ‘npm run start’
 
-# Este proyecto se le va hacer deploy en el servicio de heroku
+# Este proyecto pueder verlo en producción en el siguiente link: 
 
 https://weatherassistans.herokuapp.com/
